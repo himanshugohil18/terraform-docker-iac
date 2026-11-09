@@ -1,0 +1,90 @@
+# =============================================================================
+# .gitignore
+# -----------------------------------------------------------------------------
+# Ensures Terraform state, secrets, and local artifacts are never committed.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Terraform
+# -----------------------------------------------------------------------------
+# Local .terraform directories (provider plugins, modules, etc.)
+.terraform/
+.terraform*/
+
+# Terraform state files — MUST NEVER be committed (may contain sensitive data)
+*.tfstate
+*.tfstate.*
+tfstate.d/
+
+# Terraform state backup files
+*.tfstate.backup
+
+# Crash log files
+crash.log
+crash.*.log
+
+# -----------------------------------------------------------------------------
+# Variable files (may contain secrets)
+# -----------------------------------------------------------------------------
+# .tfvars files — can contain sensitive input values
+*.tfvars
+*.tfvars.json
+
+# terraform.tfvars is a common convention for variable values
+terraform.tfvars
+*.auto.tfvars
+
+# Variable definition files that are auto-loaded should be ignored
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# -----------------------------------------------------------------------------
+# Sensitive / credentials files
+# -----------------------------------------------------------------------------
+# Environment files
+.env
+.env.*
+*.env
+
+# SSH keys and credentials
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+
+# AWS / cloud credentials
+.aws/
+credentials
+*.creds
+
+# Terraform variable files that may include secrets
+*secret*
+*password*
+*token*
+
+# -----------------------------------------------------------------------------
+# Lock files (optional — uncomment if you want to ignore them)
+# -----------------------------------------------------------------------------
+# .terraform.lock.hcl
+
+# -----------------------------------------------------------------------------
+# OS / Editor artifacts
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# -----------------------------------------------------------------------------
+# Logs
+# -----------------------------------------------------------------------------
+*.log
+logs/
